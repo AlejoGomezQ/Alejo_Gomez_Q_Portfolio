@@ -37,6 +37,7 @@ const { title, description } = Astro.props;
 
   html {
     font-family: "Mulish Variable", sans-serif;
+    scroll-behavior: smooth;
   }
 
   body {
@@ -44,5 +45,11 @@ const { title, description } = Astro.props;
     flex-direction: column;
     min-height: 100vh;
     background: #0d1117;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
   }
 </style>
