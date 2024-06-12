@@ -6,6 +6,9 @@ import LinkedinIcon from "../components/icons/LinkedIn.astro";
 import GitHubIcon from "../components/icons/GitHub.astro";
 import CurriculumIcon from "../components/icons/Curriculum.astro";
 import SocialBadge from "../components/SocialBadge.astro";
+import Experience from "../components/Experience.astro";
+import SectionContainer from "../components/SectionContainer.astro";
+import Briefcase from "../components/icons/Briefcase.astro";
 ---
 
 <Layout
@@ -13,18 +16,10 @@ import SocialBadge from "../components/SocialBadge.astro";
   description="Contratame para desarrollar, administrar o mejorar tu sitio web o aplición con tecnologias como Angular, Java, Wordpress"
 >
   <main>
-    <section class="py-44 w-[1120px] mx-auto">
-      <div class="flex items-center">
-        <div class="size-44">
-          <img
-            class="profile-photo rounded-full"
-            src="https://avatars.githubusercontent.com/u/83100536?v=4"
-            alt="alejo-gomez-portafolio"
-          />
-        </div>
-
-        <div class="pl-10">
-          <h1 class="text-white text-5xl font-bold flex flex-row gap-x-4 pb-4">
+    <SectionContainer class="py-44 pb-24">
+      <div class="flex gap-x-2 items-center">
+        <div class="">
+          <h1 class="flex flex-row gap-x-4 text-white text-5xl font-bold pb-4">
             Soy AlejoGomezQ <a
               class="flex items-center"
               target="_blank"
@@ -42,29 +37,44 @@ import SocialBadge from "../components/SocialBadge.astro";
             y Bootstrap. Además, cuento con habilidades en pensamiento sistémico,
             investigación y SCRUM.
           </h2>
+          <ul class="flex gap-x-4 mt-8">
+            <li>
+              <SocialBadge
+                href="../resources/curriculums/HV_Alejandro_Gómez_Q.pdf"
+                download="HV_Alejandro_Gómez_Q.pdf"
+                ><CurriculumIcon class="size-6" />Descargar CV</SocialBadge
+              >
+            </li>
+            <li>
+              <SocialBadge href="https://www.linkedin.com/in/alejogomezq/">
+                <LinkedinIcon class="size-6" />LinkedIn</SocialBadge
+              >
+            </li>
+            <li>
+              <SocialBadge href="https://github.com/AlejoGomezQ">
+                <GitHubIcon class="size-6" /> GitHub</SocialBadge
+              >
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <img
+            class="profile-photo rounded-full"
+            src="https://avatars.githubusercontent.com/u/83100536?v=4"
+            alt="alejo-gomez-portafolio"
+          />
         </div>
       </div>
+    </SectionContainer>
 
-      <ul class="flex gap-x-4 mt-8">
-        <li>
-          <SocialBadge
-            href="../resources/curriculums/HV_Alejandro_Gómez_Q.pdf"
-            download="HV_Alejandro_Gómez_Q.pdf"
-            ><CurriculumIcon class="size-6" />Descargar CV</SocialBadge
-          >
-        </li>
-        <li>
-          <SocialBadge href="https://www.linkedin.com/in/alejogomezq/">
-            <LinkedinIcon class="size-6" />LinkedIn</SocialBadge
-          >
-        </li>
-        <li>
-          <SocialBadge href="https://github.com/AlejoGomezQ">
-            <GitHubIcon class="size-6" /> GitHub</SocialBadge
-          >
-        </li>
-      </ul>
-    </section>
+    <SectionContainer>
+      <h2 class="text-3xl font-semibold mb-6 flex gap-x-3 items-center">
+        <Briefcase class="size-6" />
+        Experiencia laboral
+      </h2>
+      <Experience />
+    </SectionContainer>
   </main>
 </Layout>
 
