@@ -9,6 +9,7 @@ import SocialBadge from "../components/SocialBadge.astro";
 import Experience from "../components/Experience.astro";
 import SectionContainer from "../components/SectionContainer.astro";
 import Briefcase from "../components/icons/Briefcase.astro";
+import User from "../components/icons/User.astro";
 ---
 
 <Layout
@@ -16,7 +17,7 @@ import Briefcase from "../components/icons/Briefcase.astro";
   description="Contratame para desarrollar, administrar o mejorar tu sitio web o aplición con tecnologias como Angular, Java, Wordpress"
 >
   <main>
-    <SectionContainer class="py-44 pb-24">
+    <SectionContainer class="py-44 pb-24" id="inicio">
       <div class="flex gap-x-2 items-center">
         <div class="">
           <h1 class="flex flex-row gap-x-4 text-white text-5xl font-bold pb-4">
@@ -29,13 +30,14 @@ import Briefcase from "../components/icons/Briefcase.astro";
             >
           </h1>
           <h2 class="text-xl">
-            <span>Ingeniero de sistemas e ingeniero en nanotecnología.</span>
+            Desarrollador frontend.
             <span class="text-violet-400">
-              3 años de experencia como desarrollador frontend.</span
-            > Las tecnologías que manejo son HTML5, CSS3, Java, Javascript y Typescript
-            y tengo experiencia en frameworks y librerías como, Angular, Tailwind
-            y Bootstrap. Además, cuento con habilidades en pensamiento sistémico,
-            investigación y SCRUM.
+              +3 años de experencia como desarrollador web.</span
+            > Trabajo con HTML5, CSS3, Java, Javascript y Typescript y frameworks
+            y librerías como, Angular, Tailwind y Bootstrap. <span
+              class="text-slate-400"
+              >Habilidades en pensamiento sistemico, investigación y SCRUM.</span
+            >
           </h2>
           <ul class="flex gap-x-4 mt-8">
             <li>
@@ -68,12 +70,30 @@ import Briefcase from "../components/icons/Briefcase.astro";
       </div>
     </SectionContainer>
 
-    <SectionContainer>
+    <SectionContainer id="experiencia-laboral">
       <h2 class="text-3xl font-semibold mb-6 flex gap-x-3 items-center">
         <Briefcase class="size-6" />
         Experiencia laboral
       </h2>
       <Experience />
+    </SectionContainer>
+
+    <SectionContainer id="sobre-mi">
+      <h2 class="text-3xl font-semibold mb-6 flex gap-x-3 items-center">
+        <User class="size-6" />
+        Sobre mí
+      </h2>
+      <p class="pb-4">
+        Soy Alejandro Gómez Quiñones, ingeniero en nanotecnología y finalizando
+        ingeniería de sistemas. Mis primeros acercamientos en la programación
+        fueron en Octave para analizar la liberación de diferentes fármacos
+        según una geometría específica.
+      </p>
+      <p>
+        Algunos de los proyectos más importantes han sido la creación de una PWA
+        para cotizar diferentes pólizas de seguros en EE. UU. y la configuración
+        de su propio CRM para gestionar toda su información.
+      </p>
     </SectionContainer>
   </main>
 </Layout>
