@@ -1,13 +1,12 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Card from "../components/Card.astro";
-import Badge from "../components/Badge.astro";
-import LinkedinIcon from "../components/icons/LinkedIn.astro";
-import GitHubIcon from "../components/icons/GitHub.astro";
-import CurriculumIcon from "../components/icons/Curriculum.astro";
-import SocialBadge from "../components/SocialBadge.astro";
-import Experience from "../components/Experience.astro";
+
+//Components
 import SectionContainer from "../components/SectionContainer.astro";
+import MainInfo from "../components/MainInfo.astro";
+import Experience from "../components/Experience.astro";
+
+//Icons
 import Briefcase from "../components/icons/Briefcase.astro";
 import User from "../components/icons/User.astro";
 ---
@@ -18,58 +17,7 @@ import User from "../components/icons/User.astro";
 >
   <main class="px-4">
     <SectionContainer class="py-44 pb-24" id="inicio">
-      <div class="flex gap-x-2 items-center">
-        <div class="flex flex-col">
-          <h1
-            class="flex flex-row gap-x-4 text-white text-3xl md:text-4xl lg:text-5xl font-bold pb-6 lg:pb-10"
-          >
-            Soy AlejoGomezQ <a
-              class="flex items-center"
-              target="_blank"
-              rel="noopener"
-              href="https://www.linkedin.com/in/alejogomezq/"
-              ><Badge>Disponible</Badge></a
-            >
-          </h1>
-          <h2 class="text-xl lg:text-2xl text-pretty max-w[700px]">
-            Desarrollador frontend.
-            <span class="text-violet-400">
-              +3 años de experencia como desarrollador web.</span
-            > Trabajo con HTML5, CSS3, Java, Javascript y Typescript y frameworks
-            y librerías como, Angular, Tailwind y Bootstrap. <span
-              class="text-slate-400"
-              >Habilidades en pensamiento sistemico, investigación y SCRUM.</span
-            >
-          </h2>
-          <ul class="flex flex-wrap gap-4 mt-8">
-            <li>
-              <SocialBadge
-                href="../resources/curriculums/HV_Alejandro_Gómez_Q.pdf"
-                download="HV_Alejandro_Gómez_Q.pdf"
-                ><CurriculumIcon class="size-4 md:size-6" />Descargar CV</SocialBadge
-              >
-            </li>
-            <li>
-              <SocialBadge href="https://www.linkedin.com/in/alejogomezq/">
-                <LinkedinIcon class="size-4 md:size-6" />LinkedIn</SocialBadge
-              >
-            </li>
-            <li>
-              <SocialBadge href="https://github.com/AlejoGomezQ">
-                <GitHubIcon class="size-4 md:size-6" /> GitHub</SocialBadge
-              >
-            </li>
-          </ul>
-        </div>
-
-        <div>
-          <img
-            class="profile-photo rounded-full"
-            src="https://avatars.githubusercontent.com/u/83100536?v=4"
-            alt="alejo-gomez-portafolio"
-          />
-        </div>
-      </div>
+      <MainInfo />
     </SectionContainer>
 
     <SectionContainer id="experiencia-laboral">
@@ -99,9 +47,3 @@ import User from "../components/icons/User.astro";
     </SectionContainer>
   </main>
 </Layout>
-
-<style>
-  .profile-photo {
-    box-shadow: 0 0 20px rgba(175, 78, 255, 0.5);
-  }
-</style>
