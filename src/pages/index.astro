@@ -5,10 +5,12 @@ import Layout from "../layouts/Layout.astro";
 import SectionContainer from "../components/SectionContainer.astro";
 import MainInfo from "../components/MainInfo.astro";
 import Experience from "../components/Experience.astro";
+import Projects from "../components/Projects.astro";
 
 //Icons
-import Briefcase from "../components/icons/Briefcase.astro";
-import User from "../components/icons/User.astro";
+import BriefcaseIcon from "../components/icons/Briefcase.astro";
+import UserIcon from "../components/icons/User.astro";
+import ProjectIcon from "../components/icons/Project.astro";
 ---
 
 <Layout
@@ -20,17 +22,25 @@ import User from "../components/icons/User.astro";
       <MainInfo />
     </SectionContainer>
 
-    <SectionContainer id="experiencia-laboral">
+    <SectionContainer id="experiencia-laboral" class="pb-24">
       <h2 class="text-3xl font-semibold mb-6 flex gap-x-3 items-center">
-        <Briefcase class="size-6" />
+        <BriefcaseIcon class="size-6" />
         Experiencia laboral
       </h2>
       <Experience />
     </SectionContainer>
 
-    <SectionContainer id="sobre-mi">
+    <SectionContainer id="experiencia-laboral" class="pb-24">
       <h2 class="text-3xl font-semibold mb-6 flex gap-x-3 items-center">
-        <User class="size-6" />
+        <ProjectIcon class="size-6" />
+        Proyectos
+      </h2>
+      <Projects />
+    </SectionContainer>
+
+    <SectionContainer id="sobre-mi" class="pb-24">
+      <h2 class="text-3xl font-semibold mb-6 flex gap-x-3 items-center">
+        <UserIcon class="size-6" />
         Sobre mí
       </h2>
       <p class="pb-4 text-pretty">
