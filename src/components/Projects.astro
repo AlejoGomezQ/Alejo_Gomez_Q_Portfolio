@@ -1,0 +1,112 @@
+---
+import Angular from "./icons/Angular.astro";
+import Tailwind from "./icons/Tailwind.astro";
+import NodeJS from "./icons/NodeJS.astro";
+import HTML from "./icons/HTML.astro";
+import CSS from "./icons/CSS.astro";
+import Javascript from "./icons/Javascript.astro";
+import Wordpress from "./icons/Wordpress.astro";
+import SocialBadge from "./SocialBadge.astro";
+import RigthArrow from "./icons/RigthArrow.astro";
+
+const TAGS = {
+  angular: {
+    name: "Angular",
+    color: "red",
+    icon: Angular,
+  },
+  tailwindcss: {
+    name: "Tailwind CSS",
+    color: "blue",
+    icon: Tailwind,
+  },
+  nodejs: {
+    name: "Node JS",
+    color: "green",
+    icon: NodeJS,
+  },
+  html: {
+    name: "HTML",
+    color: "orange",
+    icon: HTML,
+  },
+  css: {
+    name: "CSS",
+    color: "blue",
+    icon: CSS,
+  },
+  javascript: {
+    name: "Javascript",
+    color: "yellow",
+    icon: Javascript,
+  },
+  wordpress: {
+    name: "Wordpress",
+    color: "blue",
+    icon: Wordpress,
+  },
+};
+
+const PROJECTS = [
+  {
+    title: "PWA para cotizaciones de seguros en EE.UU.",
+    description:
+      "Se desarrolló una PWA para cotizar pólizas de seguros en EE.UU. La aplicación presenta un formulario reactivo según la póliza seleccionada, con una vista para clientes que genera una cotización aproximada y un PDF, y una vista para brokers internos que permite completar más información y generar múltiples cotizaciones en PDF para diferentes aseguradoras con la misma información.",
+    image: "/images/bluegrizly-pwa.webp",
+    link: "",
+    tags: [TAGS.angular, TAGS.tailwindcss, TAGS.nodejs],
+  },
+  {
+    title: "Sitio web empresarial de Worx1 HR",
+    description:
+      "Se desarrolló un sitio web empresarial para Worx1 HR, que ofrece servicios de outsourcing. El sitio web presenta información sobre la empresa, sus servicios a nivel EE.UU. y a nivel Colombia, un blog y un contacto.",
+    image: "/images/worx1-hr-sitio-web.webp",
+    link: "https://worx1hr.com/",
+    tags: [TAGS.html, TAGS.css, TAGS.javascript, TAGS.wordpress],
+  },
+];
+
+interface Project {
+  title: string;
+  description: string;
+  link?: string;
+  image: string;
+  tags: string[];
+}
+---
+
+{
+  PROJECTS.map(({ title, description, link, image, tags }) => (
+    <article class="pb-12">
+      <h3 class="mb-2 text-xl font-semibold text-violet-400">{title}</h3>
+      <p class="mb-6 text-base font-normal text-gray-300 text-pretty">
+        {description}
+      </p>
+      <ul class="flex gap-x-6 mb-4">
+        {tags.map((tag) => (
+          <li class="flex items-center gap-x-2">
+            <SocialBadge>
+              <tag.icon class="size-6" /> {tag.name}
+            </SocialBadge>
+          </li>
+        ))}
+      </ul>
+      <img
+        src={image}
+        alt={`captura-pantalla-proyecto-${title}`}
+        class="rounded mb-4 shadow-white/10"
+      />
+      {link ? (
+        <a
+          href={link}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex justify-center items-center gap-x-2 py-2  hover:text-violet-400/90 hover:scale-110 transition"
+        >
+          Ver proyecto
+          <RigthArrow />
+        </a>
+      ) : null}
+    </article>
+  ))
+}
