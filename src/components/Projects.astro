@@ -8,6 +8,7 @@ import Javascript from "./icons/Javascript.astro";
 import Wordpress from "./icons/Wordpress.astro";
 import SocialBadge from "./SocialBadge.astro";
 import RigthArrow from "./icons/RigthArrow.astro";
+import Typescript from "./icons/Typescript.astro";
 
 const TAGS = {
   angular: {
@@ -45,6 +46,11 @@ const TAGS = {
     color: "blue",
     icon: Wordpress,
   },
+  typescript: {
+    name: "Typescript",
+    color: "blue",
+    icon: Typescript,
+  },
 };
 
 const PROJECTS = [
@@ -54,7 +60,7 @@ const PROJECTS = [
       "Se desarrolló una PWA para cotizar pólizas de seguros en EE.UU. La aplicación presenta un formulario reactivo según la póliza seleccionada, con una vista para clientes que genera una cotización aproximada y un PDF, y una vista para brokers internos que permite completar más información y generar múltiples cotizaciones en PDF para diferentes aseguradoras con la misma información.",
     image: "/images/bluegrizly-pwa.webp",
     link: "",
-    tags: [TAGS.angular, TAGS.tailwindcss, TAGS.nodejs],
+    tags: [TAGS.angular, TAGS.nodejs, TAGS.typescript, TAGS.tailwindcss],
   },
   {
     title: "Sitio web empresarial de Worx1 HR",
