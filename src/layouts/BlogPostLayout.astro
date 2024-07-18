@@ -1,0 +1,26 @@
+---
+const { frontmatter } = Astro.props;
+
+const { title, description, pubDate, author, image, tags } = frontmatter;
+---
+
+<h1>{title}</h1>
+<span>Escrito por {author}</span>
+<span>Publicado el: {pubDate.slice(0, 10)}</span>
+<img src={image.url} alt={image.alt} />
+<article class="tags">
+  {
+    tags.map((tag: string) => (
+      <p class="flex justify-center items-center gap-x-2 py-1 px-2 md:px-6 md:py-2 text-xs md:text-base rounded-full border border-white/10 bg-slate hover:scale-110 transition">
+        <a href={`/tags/${tag}`}>{tag}</a>
+      </p>
+    ))
+  }
+</article>
+<slot />
+
+<style>
+  p {
+    margin-bottom: 12px;
+  }
+</style>
