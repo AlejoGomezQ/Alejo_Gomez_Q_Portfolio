@@ -8,17 +8,21 @@ const allBlogPost = await Astro.glob("./posts/*.md");
   title="AlejoGomezQ | Desarrollador web"
   description="Contratame para desarrollar, administrar o mejorar tu sitio web o aplición con tecnologias como Angular, Java, Wordpress"
 >
-  {
-    allBlogPost.map((post) => (
-      <a
-        href={post.url}
-        class="block max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100"
-      >
-        <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">
-          {post.frontmatter.title}
-        </h5>
-        <p class="font-normal text-gray-700">{post.frontmatter.description}</p>
-      </a>
-    ))
-  }
+  <main class="flex justify-center items-center my-20 flex-grow">
+    {
+      allBlogPost.map((post) => (
+        <a
+          href={post.url}
+          class="block max-w-sm p-6 rounded-lg border border-white/10 bg-slate hover:scale-110 transition"
+        >
+          <h5 class="mb-2 text-2xl font-bold tracking-tight text-violet-400">
+            {post.frontmatter.title}
+          </h5>
+          <p class="font-normal text-gray-300 text-pretty">
+            {post.frontmatter.description}
+          </p>
+        </a>
+      ))
+    }
+  </main>
 </Layout>
