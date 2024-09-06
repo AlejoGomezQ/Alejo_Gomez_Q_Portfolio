@@ -1,26 +1,36 @@
 ---
-const { frontmatter } = Astro.props;
+import Header from "../components/Header.astro";
+import BlogDescription from "../components/BlogDescription.astro";
 
-const { title, description, pubDate, author, image, tags } = frontmatter;
+const { frontmatter } = Astro.props;
 ---
 
-<h1>{title}</h1>
-<span>Escrito por {author}</span>
-<span>Publicado el: {pubDate.slice(0, 10)}</span>
-<img src={image.url} alt={image.alt} />
-<article class="tags">
-  {
-    tags.map((tag: string) => (
-      <p class="flex justify-center items-center gap-x-2 py-1 px-2 md:px-6 md:py-2 text-xs md:text-base rounded-full border border-white/10 bg-slate hover:scale-110 transition">
-        <a href={`/tags/${tag}`}>{tag}</a>
-      </p>
-    ))
-  }
-</article>
-<slot />
+<html>
+  <body class="bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(175,78,255,0.2),rgba(255,255,255,0))] min-h-screen flex flex-col">
+    <Header />
+    <main class="px-4 flex-grow">
+      	<section class="section flex flex-col item-center py-44 pb-24 scroll-m-20 w-full mx-auto container lg:max-w-4xl md:max-w-2xl">
+        	<BlogDescription frontmatter={frontmatter} />
+      		<div class="mt-6 max-w-screen mb-6 text-base font-normal text-gray-300">
+        		<slot />  
+      		</div>
+    	</section>
+    </main>
+  </body>
+</html>
 
 <style>
+  :root {
+	color-scheme: light dark;
+	color: #ffffff;
+  }
+
+  h2 {
+	color: white;
+	font-size: 2rem !important;
+  }
+
   p {
-    margin-bottom: 12px;
+	margin-bottom: 1rem;
   }
 </style>
