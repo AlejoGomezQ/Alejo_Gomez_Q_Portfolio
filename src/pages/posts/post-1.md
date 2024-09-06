@@ -5,7 +5,7 @@ pubDate: 2024-06-28
 description: "¡Angular v18 ha llegado para revolucionar el desarrollo web! Este robusto framework de Google optimiza el rendimiento y simplifica el trabajo del desarrollador con nuevas características como la detección de cambios sin ZoneJS, signals más estables, y mejoras en el renderizado del lado del servidor. Descubre todas las novedades y mejora tu experiencia con Angular."
 author: "Alejo Gómez Q"
 image:
-  url: "../../../public/images/blog/logo-angular18.webp"
+  url: "/images/blog/logo-angular18.webp"
   alt: "Nueva version Angular."
 tags: ["Angular", "Angular v18", "Google", "Angular Material", "Wiz"]
 ---
@@ -14,7 +14,7 @@ La espera ha terminado. Angular v18, unos de los frameworks de Google mas robust
 
 ## Zoneless – Change Detection
 
-Como bien se sabe, `ZoneJS` ha sido el encargado de activar la detección de cambios en Angular. Cabe resaltar que siempre ha sido un dolor de cabeza para los desarrolladores trabajar con ello debido a la reducción del rendimiento y la experiencia de desarrollo. Esto se ve reflejado en que cada vez que realizas un cambio, la aplicación hace una especie de burbujeo sobre todo el árbol de componentes para ver si hubo cambios sobre toda la aplicación.
+Como bien se sabe, **ZoneJS** ha sido el encargado de activar la detección de cambios en Angular. Cabe resaltar que siempre ha sido un dolor de cabeza para los desarrolladores trabajar con ello debido a la reducción del rendimiento y la experiencia de desarrollo. Esto se ve reflejado en que cada vez que realizas un cambio, la aplicación hace una especie de burbujeo sobre todo el árbol de componentes para ver si hubo cambios sobre toda la aplicación.
 
 Ahora, Angular v18 introduce una nueva forma de activar la detección de cambios aunque aún se encuentra en una etapa experimental. Como ya no dependerá de ZoneJS para detectar los cambios en el árbol de componentes, Angular ahora tiene su propia detección de cambios. Es importante resaltar que esta nueva funcionalidad es opcional y el soporte para aplicaciones que aun sigan trabajando con ZoneJS se seguirá manteniendo.
 
