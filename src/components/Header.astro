@@ -1,19 +1,90 @@
-<header class="border-b">
-  <div
-    class="flex justify-center items-center py-3 w-full xl:w-[1120px] mx-auto"
+<header class="flex justify-center">
+  <main
+    class="fixed flex justify-center items-center py-3 mt-4 w-full rounded-full border border-white/10 lg:max-w-4xl md:max-w-2xl"
   >
-    <nav class="flex flex-row gap-x-10 opacity-80">
-      <a href="#inicio">Inicio</a>
-      <a href="#experiencia-laboral">Experencia</a>
-      <a href="#proyectos">Proyectos</a>
-      <a href="#sobre-mi">Sobre mí</a>
-      <a href="/blog">Blog</a>
+    <nav>
+      <input type="checkbox" id="menu-toggle" />
+      <label for="menu-toggle" class="menu-icon">&#9776;</label>
+      <ul class="menu flex flex-row gap-x-20 opacity-80">
+        <li><a href="/">Inicio</a></li>
+        <li><a href="#experiencia-laboral">Experencia</a></li>
+        <li><a href="#proyectos">Proyectos</a></li>
+        <li><a href="#sobre-mi">Sobre mí</a></li>
+        <li><a href="/blog">Blog</a></li>
+      </ul>
     </nav>
-  </div>
+  </main>
 </header>
 
 <style>
-  header {
-    border-color: #ffffff29;
+  main {
+    z-index: 1000;
+    animation: show-nav 1s linear both;
+    animation-timeline: scroll();
+    animation-range: 0 100px;
+  }
+
+  .menu a {
+    display: block;
+    transition: 0.2s all ease-in-out;
+  }
+
+  .menu:hover a {
+    opacity: 0.4;
+  }
+
+  .menu a:hover {
+    opacity: 1;
+    color: $white;
+  }
+
+  .menu-icon {
+    display: none;
+  }
+
+  #menu-toggle {
+    display: none;
+  }
+
+  #menu-toggle:checked ~ .menu {
+    transform: scale(1, 1);
+  }
+
+  @media (max-width: 950px) {
+    .menu {
+      flex-direction: column;
+      background-color: #151418;
+      align-items: start;
+      position: absolute;
+      top: 70px;
+      left: 0;
+      width: 100%;
+      z-index: 1;
+      transform: scale(1, 0);
+      transform-origin: top;
+      transition: transform 0.3s ease-in-out;
+      box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+
+      a {
+        margin-left: 12px;
+      }
+
+      li {
+        margin-bottom: 10px;
+      }
+    }
+
+    .menu-icon {
+      display: block;
+      font-size: 28px;
+      cursor: pointer;
+    }
+  }
+
+  @keyframes show-nav {
+    100% {
+      background: #150d17e8;
+      border: 1px solid #aaaaaa1c;
+    }
   }
 </style>
