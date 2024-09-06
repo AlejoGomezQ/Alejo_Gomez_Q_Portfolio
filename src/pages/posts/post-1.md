@@ -5,7 +5,7 @@ pubDate: 2024-06-28
 description: "¡Angular v18 ha llegado para revolucionar el desarrollo web! Este robusto framework de Google optimiza el rendimiento y simplifica el trabajo del desarrollador con nuevas características como la detección de cambios sin ZoneJS, signals más estables, y mejoras en el renderizado del lado del servidor. Descubre todas las novedades y mejora tu experiencia con Angular."
 author: "Alejo Gómez Q"
 image:
-  url: "https://docs.astro.build/assets/full-logo-light.png"
+  url: "../../../public/images/blog/logo-angular18.webp"
   alt: "Nueva version Angular."
 tags: ["Angular", "Angular v18", "Google", "Angular Material", "Wiz"]
 ---

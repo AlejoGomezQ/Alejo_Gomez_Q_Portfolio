@@ -15,7 +15,7 @@ const { title, description } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="description" content={description} />
@@ -51,13 +51,6 @@ const { title, description } = Astro.props;
   html {
     font-family: "Mulish Variable", sans-serif;
     scroll-behavior: smooth;
-  }
-
-  body {
-    display: flex;
-    flex-direction: column;
-    min-height: 100dvh;
-    background: #0d1117;
   }
 
   @media (prefers-reduced-motion: reduce) {
