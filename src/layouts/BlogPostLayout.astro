@@ -2,35 +2,49 @@
 import Header from "../components/Header.astro";
 import BlogDescription from "../components/BlogDescription.astro";
 
+//Typography
+import "@fontsource-variable/mulish";
+
 const { frontmatter } = Astro.props;
+
+const { title, description } = frontmatter;
 ---
 
 <html>
-  <body class="bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(175,78,255,0.2),rgba(255,255,255,0))] min-h-screen flex flex-col">
+  <head lang="es">
+    <meta charset="UTF-8" />
+    <meta name="description" content={description} />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body
+    class="bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(175,78,255,0.2),rgba(255,255,255,0))] min-h-screen flex flex-col"
+  >
     <Header />
     <main class="px-4 flex-grow">
-      	<section class="section flex flex-col item-center py-44 pb-24 scroll-m-20 w-full mx-auto container lg:max-w-4xl md:max-w-2xl">
-        	<BlogDescription frontmatter={frontmatter} />
-      		<div class="mt-6 max-w-screen mb-6 text-base font-normal text-gray-300">
-        		<slot />  
-      		</div>
-    	</section>
+      <section
+        class="section flex flex-col item-center py-44 pb-24 scroll-m-20 w-full mx-auto container lg:max-w-4xl md:max-w-2xl"
+      >
+        <BlogDescription frontmatter={frontmatter} />
+        <div
+          class="prose max-w-full mt-6 mb-6 font-normal text-pretty text-gray-300"
+        >
+          <slot />
+        </div>
+      </section>
     </main>
   </body>
 </html>
 
 <style>
   :root {
-	color-scheme: light dark;
-	color: #ffffff;
+    color-scheme: light dark;
+    color: #ffffff;
   }
 
-  h2 {
-	color: white;
-	font-size: 2rem !important;
-  }
-
-  p {
-	margin-bottom: 1rem;
+  .prose h2 {
+    color: white !important;
   }
 </style>
