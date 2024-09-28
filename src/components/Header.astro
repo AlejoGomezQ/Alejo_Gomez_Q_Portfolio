@@ -1,20 +1,69 @@
+---
+const currentPath = Astro.url.pathname;
+const isHomePage = currentPath === "/";
+---
+
 <header class="flex justify-center">
   <main
-    class="fixed flex justify-center items-center py-3 mt-4 w-full rounded-full border border-white/10 lg:max-w-4xl md:max-w-2xl"
+    class="fixed flex justify-center items-center py-3 mt-4 w-full max-h-9 sm:w-[95%] rounded-full border border-white/10 lg:max-w-4xl md:max-w-2xl sm:mx-2"
   >
     <nav>
       <input type="checkbox" id="menu-toggle" />
       <label for="menu-toggle" class="menu-icon">&#9776;</label>
       <ul class="menu flex flex-row gap-x-20 opacity-80">
-        <li><a href="/">Inicio</a></li>
-        <li><a href="#experiencia-laboral">Experencia</a></li>
-        <li><a href="#proyectos">Proyectos</a></li>
-        <li><a href="#sobre-mi">Sobre mí</a></li>
-        <li><a href="/blog">Blog</a></li>
+        <li><a href="/" class="nav-link">Inicio</a></li>
+        <li>
+          <a
+            href={isHomePage ? "#experiencia-laboral" : "/#experiencia-laboral"}
+            class="nav-link">Experiencia</a
+          >
+        </li>
+        <li>
+          <a href={isHomePage ? "#proyectos" : "/#proyectos"} class="nav-link"
+            >Proyectos</a
+          >
+        </li>
+        <li>
+          <a href={isHomePage ? "#sobre-mi" : "/#sobre-mi"} class="nav-link"
+            >Sobre mí</a
+          >
+        </li>
+        <li><a href="/blog" class="nav-link">Blog</a></li>
       </ul>
     </nav>
   </main>
 </header>
+
+<script>
+  function handleNavClick(e: Event) {
+    const link = e.currentTarget as HTMLAnchorElement;
+    const href = link.getAttribute("href");
+
+    if (href && href.startsWith("/#")) {
+      e.preventDefault();
+      const targetId = href.substring(2);
+      const targetElement = document.getElementById(targetId);
+
+      if (targetElement) {
+        targetElement.scrollIntoView({ behavior: "smooth" });
+      } else {
+        window.location.href = href;
+      }
+    }
+  }
+
+  function setupNavListeners() {
+    const navLinks = document.querySelectorAll(".nav-link");
+    navLinks.forEach((link) => {
+      link.removeEventListener("click", handleNavClick);
+      link.addEventListener("click", handleNavClick);
+    });
+  }
+
+  setupNavListeners();
+
+  document.addEventListener("astro:after-swap", setupNavListeners);
+</script>
 
 <style>
   main {
@@ -35,7 +84,7 @@
 
   .menu a:hover {
     opacity: 1;
-    color: $white;
+    color: #ffffff;
   }
 
   .menu-icon {

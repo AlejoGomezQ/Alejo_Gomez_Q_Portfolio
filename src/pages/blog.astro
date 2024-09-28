@@ -13,7 +13,7 @@ const allBlogPost = await Astro.glob("./posts/*.md");
       allBlogPost.map((post) => (
         <a
           href={post.url}
-          class="block max-w-sm p-6 rounded-lg border border-white/10 bg-slate hover:scale-110 transition"
+          class="flex-1 flex flex-col justify-between mx-4 max-w-sm min-h-[22rem] p-6 rounded-lg border border-white/10 bg-slate hover:scale-110 transition"
         >
           <h5 class="mb-2 text-2xl font-bold tracking-tight text-violet-400">
             {post.frontmatter.title}
